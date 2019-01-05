@@ -1,4 +1,4 @@
-# Stackoverflow shipmnts
+# Stackoverflow Shipmnts
 
 **A [Django](https://www.djangoproject.com/) Application**
 
@@ -11,9 +11,9 @@
 ## Installation and Setup
 
 * Setup a virtualenv
-```bash
-    virtualenv -p python3 <foldername>
-```
+    ```bash
+        virtualenv -p python3 <foldername>
+    ```
 * Clone the **Git** repository.
 * Create a database
 * Navigate to the project root folder and install all the dependecies
