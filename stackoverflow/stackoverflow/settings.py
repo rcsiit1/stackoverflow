@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'stackoverflow',
         'USER':'root',
-        'PASSWORD':'root.321',
+        'PASSWORD':'root@321',
         'HOST':'localhost',
         'PORT':'3306',
     }
