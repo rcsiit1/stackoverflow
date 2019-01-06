@@ -1,0 +1,35 @@
+{% extends "stack_enterprise/base.html" %}
+{% block content %}
+
+{% load static %}
+<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+<script src="{% static '/stack_enterprise/js/bootstrap-tagsinput.js' %}"></script>
+<link rel="stylesheet" href="{% static '/stack_enterprise/css/bootstrap-tagsinput.css' %}">
+<div class="container">
+        <div class="text-center">
+                <h2>
+                        <span style="color:orange;">Ask question</span> and get it <span style="color:green;">answered</span> by the <span style="color: blue;">Community</span>
+                </h2><br><br>
+        </div>
+        <form action="/action_page.php" onkeypress="return event.keyCode != 13;">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="email" class="form-control" id="title" required>
+            </div>
+            <div class="form-group">
+              <label for="tags">Tags</label><br>
+              <input type="text" class="form-control" id="tags" data-role="tagsinput">
+            </div>
+            <div class="form-group">
+                    <label for="description">Description</label><br>
+                    <div id='editor'></div><br>
+            </div>
+            
+            <div class="form-group" style="margin-top:3px">
+                    <a href="{% url 'home-page' %}" class="btn btn-warning my-2 my-sm-0">Cancel</a>
+                    <button class="btn btn-primary my-2 my-sm-0" type="submit">Post Question</button>
+            </div>
+            
+          </form>
+</div>
+{% endblock%}

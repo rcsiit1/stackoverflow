@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def HomePage(request):
     return render(request,'stack_enterprise/base.html')
+
+def NewQuestionPage(request):
+    return render(request,'stack_enterprise/new-post.html')

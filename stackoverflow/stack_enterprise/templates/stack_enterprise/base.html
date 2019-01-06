@@ -10,7 +10,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fafafb;">
-  <a class="navbar-brand" href="#">Stackoverflow Enterprise</a>
+  <a class="navbar-brand" href="{% url 'home-page' %}"><h2>Stackoverflow <span class="span-logo">Enterprise</span></h2></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -22,7 +22,7 @@
     </form>
     <ul class="navbar-nav ml-auto float-right">
       <li class="nav-item active float-right">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'home-page' %}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active float-right">
         <a class="nav-link" href="#">My Questions <span class="sr-only">(current)</span></a>
@@ -36,10 +36,20 @@
     </ul>
   </div>
 </nav>
-<div class="vertical-center">
-</div>
-<div>
+{% block content %}
 <div class="vl"></div>
+<div class="v2">
+  <div class="span-title">
+    <span >Top Questions
+      <form class='ask-questions' method='POST' action="{% url 'new_question' %}">
+          {% csrf_token %}
+          <button class="btn btn-primary my-2 my-sm-0"  type="submit" >Ask Question</button>
+      </form>
+    </span> 
+  </div>
+  <hr class = "line">
 </div>
+{% endblock %}
 </body>
+<script src="{% static '/stack_enterprise/js/main.js' %}"></script>
 </html>

@@ -19,4 +19,5 @@ from . import views
 
 urlpatterns = [
     path('home/',views.HomePage, name ='home-page'),
+    path('ask-new-question/',views.NewQuestionPage,name='new_question')
 ]
