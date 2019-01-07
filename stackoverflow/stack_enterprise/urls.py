@@ -19,5 +19,7 @@ from . import views
 
 urlpatterns = [
     path('home/',views.HomePage, name ='home-page'),
-    path('ask-new-question/',views.NewQuestionPage,name='new_question')
+    path('ask-new-question/',views.NewQuestionPage,name='new_question'),
+    path('login/',views.LoginPage,name='login'),
+    path('login-user',views.UserLogin,name='user-login')
 ]

@@ -44,7 +44,7 @@ class Upvotes(models.Model):
     answer_id = models.ForeignKey(Answers, on_delete = models.CASCADE)
     user_id = models.ForeignKey(User , on_delete = models.CASCADE,related_name='to_user')
     upvoter_id = models.ForeignKey(User,on_delete = models.CASCADE, related_name='from_user')
-    vote_count = models.IntegerField( default = 0)
+    vote_count = models.IntegerField(default =0)
 
     def __str__(self):
         return self.question_id + " " + self.vote_count
