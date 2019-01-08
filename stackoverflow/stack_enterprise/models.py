@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -6,6 +7,8 @@ class User(models.Model):
     username = models.CharField(max_length = 15)
     password = models.CharField(max_length = 50)
     reputation = models.IntegerField(default = 0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.username
@@ -17,6 +20,8 @@ class Questions(models.Model):
     is_answered = models.BooleanField(default = False)
     has_correct_answer = models.BooleanField(default = False)
     owner_id = models.ForeignKey(User,on_delete = models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
@@ -26,6 +31,8 @@ class Answers(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     question_id = models.ForeignKey(Questions, on_delete = models.CASCADE)
     is_correct = models.BooleanField(default = False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.details
@@ -35,6 +42,8 @@ class Comments(models.Model):
     question_id = models.ForeignKey(Questions, on_delete = models.CASCADE)
     answer_id = models.ForeignKey(Answers, on_delete = models.CASCADE)
     user_id = models.ForeignKey(User, on_delete = models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.comment

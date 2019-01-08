@@ -143,8 +143,7 @@
     position: absolute;
     z-index: 2;
   }
-
-  .form {
+.form {
     margin-left: 145px;
 }
 .login-brand{
@@ -156,4 +155,33 @@
   color:  red;
   margin-left : 884px;
   margin-top : 15px;
+}
+.answers{
+  margin-left: 62px;
+  margin-top: -55px;
+}
+.answer-span{
+  margin-left: 47px;
+  margin-top: -23px;
+}
+.question{
+  margin-left: 119px;
+  margin-top: -54px;
+}
+.tags{
+  margin-left: 122px;
+  margin-top: -5px;
+}
+.username{
+  position:relative;
+  margin-left: 534px;
+  margin-top: -39px;
+}
+.creation-time{
+  position:relative;
+  margin-top: -23px;
+  margin-left: 281px;
+}
+.votes-span{
+  margin-left: -7px;
 }
