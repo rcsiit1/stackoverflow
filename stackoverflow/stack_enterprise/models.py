@@ -4,7 +4,7 @@ from django.utils import timezone
 # Create your models here.
 
 class User(models.Model):
-    username = models.CharField(max_length = 15)
+    username = models.CharField(max_length = 15,unique=True)
     password = models.CharField(max_length = 50)
     reputation = models.IntegerField(default = 0)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -55,8 +55,6 @@ class Upvotes(models.Model):
     upvoter_id = models.ForeignKey(User,on_delete = models.CASCADE, related_name='from_user')
     vote_count = models.IntegerField(default =0)
 
-    def __str__(self):
-        return self.question_id + " " + self.vote_count
 
 class Favourites(models.Model):
     user_id = models.ForeignKey(User, on_delete = models.CASCADE)

@@ -185,3 +185,31 @@
 .votes-span{
   margin-left: -7px;
 }
+.code-body{
+  margin-left:15px;
+  background-color: rgb(241, 238, 238);
+  width: 900px;
+}
+.line-without-margin{
+  size : 100%;
+  margin-top : 0%;
+}
+.comment-line{
+  size : 100%;
+  margin-top : 1%;
+  margin-left:10px;
+}
+.comment{
+  margin-top: 1%;
+  font-size: 16px;
+  font-weight: 100;
+  color: black;
+  margin-left:20px;
+}
+.answers{
+  margin-top: 1%;
+  font-size: 16px;
+  font-weight: 200;
+  color: black;
+  margin-left:20px;
+}

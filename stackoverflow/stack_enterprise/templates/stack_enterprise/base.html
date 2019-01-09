@@ -60,17 +60,17 @@
     </span>
   </div>
   <hr class = "line">
-  {% if all_questions %}
-  {% for question in all_questions %}
+  {% if top_questions %}
+  {% for question in top_questions %}
   <div style='margin-left: 30px;position:relative;'>
   <div>
-  <button class="btn btn-outline-info btn-sm "><span title="2 votes">2</span></button>
+  <button class="btn btn-outline-info btn-sm "><span title="2 votes">{{question.upvotes.vote_count__sum|default_if_none:"0" }}</span></button>
   <div class="votes-span">votes</div>
-<button class="btn btn-outline-info btn-sm answers" ><span title="4 answers" >4</span></button>
+<button class="btn btn-outline-info btn-sm answers" ><span title="4 answers" >{{question.answers}}</span></button>
 <div class="answer-span">answers</div>
 
 </div>
-  <a href='#' > <h6 class="question">{{question.title}}</h6> </a>
+  <a href="{% url 'question' %}?question_id={{question.id}}" > <h6 class="question">{{question.title}}</h6> </a>
   {% load customtags %}
   <div class="tags">
   {% with question.tags|spliter:"," as tags %}
@@ -79,7 +79,7 @@
     {% endfor %}
 {% endwith %}
 </div>
-<p class="float-right">by @{{question.owner_id.username}}&nbsp;&nbsp;</p>
+<p class="float-right">by @{{question.user}}&nbsp;&nbsp;</p>
 <p class="float-right">created at {{question.created_at}} &nbsp;</p>
   </div>
   <hr class = "line">

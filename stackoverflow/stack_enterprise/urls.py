@@ -23,5 +23,6 @@ urlpatterns = [
     path('login/',views.LoginPage,name='login'),
     path('login-user',views.UserLogin,name='user-login'),
     path('create-new-question/',views.CreateNewQuestion,name='create-question'),
-    path('user-logout/',views.UserLogout,name='user-logout')
+    path('user-logout/',views.UserLogout,name='user-logout'),
+    path('question/',views.QuestionPage,name='question')
 ]

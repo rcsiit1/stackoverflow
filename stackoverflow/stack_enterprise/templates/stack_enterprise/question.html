@@ -1,0 +1,37 @@
+{% extends "stack_enterprise/base.html" %}
+{% block content %}
+<div class="vl"></div>
+{% if question_data %}
+<div class="v2">
+  <div class="span-title">
+    <span >{{question_data.title}}
+      <form class='ask-questions' method='POST' action="{% url 'new_question' %}">
+          {% csrf_token %}
+          <button class="btn btn-success my-2 my-sm-0"  type="submit" >Ask Question</button>
+      </form>
+    </span>
+  </div>
+  <hr class = "line">
+  <div class='code-body'>
+  {{question_data.body | safe}}
+  </div>
+  <hr class = "line">
+  <div style='margin-top:2%;margin-left:5px;font-size: 19px;font-weight: 400;color: black;'>{{question_data.ans_count}}  Answers<div>
+  <hr class = "line-without-margin">
+  {% for answer in question_data.answers %}
+  <div>
+  <div class="upvote-button"></div>
+  <div class="answers">
+{{answer.details}}
+{% for comment in answer.comments %}
+<hr class = "comment-line">
+<div class='comment'>
+{{comment.comment}}
+</div>
+{% endfor %}
+  </div>
+  </div>
+  {% endfor %}
+  {% endif %}
+</div>
+{% endblock%}
